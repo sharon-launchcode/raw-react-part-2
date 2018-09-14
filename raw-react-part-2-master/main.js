@@ -1,7 +1,10 @@
 /*
  * Constants
  */
-
+var apiKey = “the_API_KEY”
+var myDB = “The secret data base name”
+var myCollection = “contacts”
+/* Above not safe for production environment Authentication needed to provide security */
 
 var CONTACT_TEMPLATE = {name: "", email: "", description: "", errors: null}
 
