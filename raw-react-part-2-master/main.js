@@ -54,6 +54,17 @@ function updateNewContact(contact) {
 
 function submitNewContact() {
   var contact = Object.assign({}, state.newContact, {key: state.contacts.length + 1, errors: {}});
+ /* packaging fields into a single object of the database */
+  
+     let contactDocument = { 
+     name: contact.name, 
+     email: contact.email, 
+     description: contact.description, 
+     _id: contact.email 
+   };
+  
+// TODO: Insert Document API Call
+},
   
   if (!contact.name) {
     contact.errors.name = ["Please enter your new contact's name"]
