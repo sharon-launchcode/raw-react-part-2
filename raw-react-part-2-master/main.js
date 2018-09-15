@@ -32,6 +32,28 @@ function setState(changes) {
 }
 
 // Set initial data
+
+$.ajax({
+   url: “https://api.mlab.com/api/1/databases/" + myDB + “/collections/” + myCollection + “?apiKey=” + apiKey,
+   success: function(data) {
+     setState({
+       contacts: data.map(function(o) {
+         return {
+           id: o.email,
+           name: o.name,
+           email: o.email,
+           description: o.description
+         };
+       }),
+       newContact: Object.assign({}, CONTACT_TEMPLATE),
+     });
+   },
+});
+
+
+
+
+
 setState({
   contacts: [
     {key: 1, name: "James K Nelson", email: "james@jamesknelson.com", description: "Front-end Unicorn"},
