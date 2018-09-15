@@ -64,6 +64,17 @@ function submitNewContact() {
    };
   
 // TODO: Insert Document API Call
+  
+$.ajax( { 
+ url:“https://api.mlab.com/api/1/databases/"+myDB+"/collections/"+myCollection+"?apiKey="+apiKey,
+ data: JSON.stringify( [ contactDocument ] ),
+ type: “POST”,
+ contentType: “application/json”
+} )  
+  
+ // TODO: Inserting Document API Call Done 
+  
+  
 },
   
   if (!contact.name) {
